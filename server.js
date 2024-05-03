@@ -2,10 +2,9 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const expressHandleBars = require('express-handlebars');
-const sequelizeStore = require('connect-session-sequelize')(session.Store);
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-const helpers = require('./utils/helpers');
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -15,14 +14,11 @@ const sess = {
     cookie: {},
     resave: false,
     saveUninitialized: true,
-    store: new sequelizeStore({
-        db: sequelize,
-    }),
 };
 
 app.use(session(sess));
 
-const handleBars = expressHandleBars.create({ helpers });
+const handleBars = expressHandleBars.create();
 
 app.engine('handlebars', handleBars.engine);
 app.set('view engine', 'handlebars');
