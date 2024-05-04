@@ -1,0 +1,38 @@
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    animation: nav-hover 1s ease;
+    color: #3cc761;
+}
+
+.active {
+    color: #3cc761;
+    animation: active 1s ease
+}
+
+@keyframes active {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes nav-hover {
+    0% {
+        color: white;
+    }
+    50% {
+        color: #acfac1;
+    }
+    100% {
+        color: #3cc761;
+    }
+}
