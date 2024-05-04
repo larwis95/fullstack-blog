@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, BlogPost, Comments } = require('../models');
-const auth = require('../utils/auth');
+const auth = require('../libs/auth');
 
 router.get('/', async (req, res) => {
     try {
@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
                 },
             ],
         });
@@ -17,7 +16,17 @@ router.get('/', async (req, res) => {
 
         res.render('homepage', {
             blogs,
-            loggedIn: req.session.logged_in
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/post', auth, async (req, res) => {
+    try {
+        res.render('post', {
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
         res.status(500).json(err);
@@ -48,7 +57,7 @@ router.get('/blog/:id', async (req, res) => {
 
         res.render('blog', {
             ...blog,
-            loggedIn: req.session.logged_in
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
         res.status(500).json(err);
@@ -74,7 +83,7 @@ router.get('/profile', auth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
+    if (req.session.loggedIn) {
         res.redirect('/profile');
         return;
     }
