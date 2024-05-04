@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Use Arch, BTW - the flexing web dev blog.</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">I Use Arch, BTW.</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">=</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="/" id="navHome">Home</a>
+            {{#if loggedIn}}
+            <a class="nav-link link-light" href="/profile" id="navProfile">Profile</a>
+            <a class="nav-link link-light" href="/logout" id="navLogout">Logout</a>
+            {{else}}
+            <a class="nav-link link-light" href="/login" id="navLogin">Login/Sign Up</a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container container-fluid mt-5">
+  {{{ body }}}
+  </main>
+  </body>
+  <script src="/js/logout.js"></script>
+</body>
+</html>
