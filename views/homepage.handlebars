@@ -1,3 +1,37 @@
+<div class="container border-top border-bottom border-light p-2">
+<div class="row d-flex justify-content-center">
+{{#if blogs}}
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Recent Posts</h2>
+        </div>
+    </div>
+{{else}}
+    <div class="row">
+        <div class="col-md-12">
+            <h3>No posts yet</h2>
+        </div>
+    </div>
+{{/if}}
+</div>
+{{#if loggedIn}}
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col-md-12">
+            <button id="postBtn" onclick="window.location.href = '/post'">New Post</button>
+        </div>
+    </div>
+</div>
+{{else}}
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Make a post by <a href="/login">logging in</a></h2>
+        </div>
+    </div>
+{{/if}}
+</div>
+</div>
 {{#each blogs as |post|}}
     <div class="row mb-4">
         <div class="col-md-5">
@@ -11,3 +45,5 @@
         </div>
     </div>
 {{/each}}
+
+

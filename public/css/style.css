@@ -1,3 +1,12 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: white;
+
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -12,6 +21,60 @@ a:hover {
     color: #3cc761;
     animation: active 1s ease
 }
+
+#postBtn {
+    color: #FFF;
+    background-color: #3cc761;
+    padding: 5px
+    transition: all 0.5s;
+    position: relative;
+  }
+  #postBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+  }
+  #postBtn:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+  }
+  #postBtn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: scale(1.2,1.2);
+  }
+  #postBtn:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+  }
+
+#postBtn {
+    color: #FFF;
+    transition: all 0.5s;
+    position: relative;
+  }
+  #postBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
 @keyframes active {
     0% {
