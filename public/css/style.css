@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #3a4c40;
+    background-color: black;
     color: white;
 
 }
@@ -20,6 +20,57 @@ a:hover {
 .active {
     color: #3cc761;
     animation: active 1s ease
+}
+
+.navbar {
+    background-color: #2a2a2a;
+    padding: 10px;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #3cc761;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #2a2a2a;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #3cc761;
+    width: 50%;
+}
+
+.close {
+    color: #3cc761;
+    font-size: 28px;
+    font-weight: bold;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+#comment {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #3cc761;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2px;
+    position: relative;
+}
+
+#loginLink {
+    text-decoration: underline;
 }
 
 #cards:hover > .card > .card-border {
@@ -63,7 +114,6 @@ a:hover {
   z-index: 1;
 
 }
-
 
 .card-body {
   height: calc(100% - 2px);
