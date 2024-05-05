@@ -1,3 +1,12 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -12,6 +21,167 @@ a:hover {
     color: #3cc761;
     animation: active 1s ease
 }
+
+.navbar {
+    background-color: #2a2a2a;
+    padding: 10px;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #3cc761;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #2a2a2a;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #3cc761;
+    width: 50%;
+}
+
+.close {
+    color: #3cc761;
+    font-size: 28px;
+    font-weight: bold;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+#comment {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #3cc761;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2px;
+    position: relative;
+}
+
+#loginLink {
+    text-decoration: underline;
+}
+
+#cards:hover > .card > .card-border {
+  opacity: 1;
+}
+
+.card {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #3cc761;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2px;
+    cursor: pointer;
+    position: relative;
+    height: 250px;
+    width: 300px;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before,
+ .card > .card-border{
+  background: radial-gradient(800px circle at var(--x) var(--y), rgba(255, 255, 255, 0.06), transparent 40%);
+  border-radius: inherit;
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.card > .card-border {
+  background: radial-gradient(400px circle at var(--x) var(--y), rgba(255, 255, 255, 0.3), transparent 40%);
+  z-index: 1;
+
+}
+
+.card-body {
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  background-color: #2a2a2a;
+  z-index: 2;
+  position: relative;
+}
+
+.card-title {
+    color: #3cc761;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#postBtn {
+    color: #FFF;
+    background-color: #3cc761;
+    padding: 5px
+    transition: all 0.5s;
+    position: relative;
+  }
+  #postBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+  }
+  #postBtn:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+  }
+  #postBtn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: scale(1.2,1.2);
+  }
+  #postBtn:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+  }
+
+#postBtn {
+    color: #FFF;
+    transition: all 0.5s;
+    position: relative;
+  }
+  #postBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
 @keyframes active {
     0% {

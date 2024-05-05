@@ -43,7 +43,9 @@ router.get('/user/:id', async (req, res) => {
 
 router.post('/', auth, async (req, res) => {
   try {
-    const blogData = await BlogPost.create(req.body);
+    const blogData = await BlogPost.create({
+      ...req.body,
+    userId: req.session.user_id});
     res.status(200).json(blogData);
   } catch (err) {
     res.status(400).json(err);

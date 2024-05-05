@@ -25,6 +25,34 @@ const handleLogin = async (event) => {
     }
 }
 
+const handleSignup = async (event) => {
+    event.preventDefault();
+
+    const username = document.querySelector('#signupName').value.trim();
+    const email = document.querySelector('#signupEmail').value.trim();
+    const password = document.querySelector('#signupPassword').value.trim();
+
+    if (username && email && password) {
+        const response = await fetch('/api/user', {
+            method: 'POST',
+            body: JSON.stringify({ username, email, password }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            const warning = document.createElement('h2');
+            warning.textContent = 'Error: Please try again';
+            warning.style.color = 'red';
+            document.querySelector('#signupForm').appendChild(warning);
+            setTimeout(() => {
+                warning.remove();
+            }, 1000);
+        }
+    }
+}
+
 const updateActiveNav = () => {
     if (document.querySelector('.active')) {
         document.querySelector('.active').classList.remove('active');
@@ -34,4 +62,5 @@ const updateActiveNav = () => {
 }
 
 document.querySelector('#loginForm').addEventListener('submit', handleLogin);
+document.querySelector('#signupForm').addEventListener('submit', handleSignup);
 document.addEventListener('DOMContentLoaded', updateActiveNav);

@@ -40,8 +40,7 @@ BlogPost.init(
         },
         updated_at: {
             type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW,
+            allowNull: true,
         },
 
     },

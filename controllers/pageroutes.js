@@ -7,12 +7,18 @@ router.get('/', async (req, res) => {
         const blogData = await BlogPost.findAll({
             include: [
                 {
-                    model: User,
+                    model: User, 
+                    attributes: ['username', 'id'],
                 },
+                {
+                    model: Comments,
+                }
             ],
         });
 
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
+        console.log(blogs);
 
         res.render('homepage', {
             blogs,
@@ -39,14 +45,14 @@ router.get('/blog/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username', 'id'],
                 },
                 {
                     model: Comments,
                     include: [
                         {
                             model: User,
-                            attributes: ['name'],
+                            attributes: ['username', 'id'],
                         },
                     ],
                 },
@@ -54,6 +60,7 @@ router.get('/blog/:id', async (req, res) => {
         });
 
         const blog = blogData.get({ plain: true });
+        console.log(blog)
 
         res.render('blog', {
             ...blog,
