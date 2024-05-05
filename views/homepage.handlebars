@@ -32,18 +32,19 @@
 {{/if}}
 </div>
 </div>
+<div class="row mb-4 mt-4 d-flex align-items-stretch" id="cards">
 {{#each blogs as |post|}}
-    <div class="row mb-4">
-        <div class="col-md-5">
-            <div class="card" style="width: 18rem;" data-id={{blog.id}}>
-                <div class="card-body">
-                    <h5 class="card-title">{{post.title}}</h5>
-                    <p class="card-text">{{format_post post.content}}</p>
-                    <a href="#" class="btn btn-primary">View Full Post</a>
+            <div class="card d-flex" style="" data-id={{post.id}}>
+                <div class="card-border"></div>
+                <div class="card-body border-top border-bottom border-success">
+                    <h5 class="card-title mb-2 border-bottom border-success-subtle">{{post.title}}</h5>
+                    <p class="card-text" style="">{{format_post post.content}}</p>
+                </div>
+                <div class="card-footer d-flex align-items-start">
+                    <small class="text-muted">Posted by {{post.user.username}} on {{format_date post.createdAt}}</small>
                 </div>
             </div>
-        </div>
-    </div>
 {{/each}}
-
+</div>
+<script src="/js/homepage.js"></script>
 

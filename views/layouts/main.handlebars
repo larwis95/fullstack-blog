@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
+  <header class="p-2">
     <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">I Use Arch, BTW.</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon">=</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link active" aria-current="page" href="/" id="navHome">Home</a>
             {{#if loggedIn}}
@@ -34,5 +34,6 @@
   </main>
   </body>
   <script src="/js/logout.js"></script>
+  <script src="/js/navbar.js"></script>
 </body>
 </html>
