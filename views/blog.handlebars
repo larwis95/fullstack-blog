@@ -1,31 +1,33 @@
-<div>
+        {{#if loggedIn}}
+        <div class="addComment">
+            <button id="commentBtn" class="postBtn">Add Comment</button>
+        </div>
+        {{else}}
+        <div class="addComment">
+            <p><a href="/login" id="loginLink">Log in</a> to add a comment</p>
+        </div>
+        {{/if}}
+<div class="blogPage">
     <div class="blog-container" data-id={{id}}>
         <div class="blog-content">
             <div class="blog-post">
-                <h2>{{title}}</h2>
-                <p>{{content}}</p>
+                <h2 class="blogTitle">{{title}}</h3>
+                <p class="blogContent">{{content}}</p>
             </div>
         </div>
 </div>
 <div>
     <div class="comment-container">
-        {{#if loggedIn}}
-        <div class="addComment">
-            <button id="commentBtn">Add Comment</button>
-        </div>
-        {{/if}}
         <div class="comment-header">
-            <h2>Comments</h2>
+            <h3 class="commentsHeader">Comments</h3>
         </div>
         <div class="comment-content">
-            <div class="comment">
                 {{#each comments as |comment|}}
-                <div class="comment-post">
-                    <p>{{comment.comment}}</p>
-                    <small class="text-muted">Posted by {{comment.user.username}} on {{format_date comment.createdAt}}</small>
+                <div class="comment">
+                    <p class="commentText">{{comment.comment}}</p>
+                    <small class="text-muted commentAuthor">Posted by {{comment.user.username}} on {{format_date comment.createdAt}}</small>
                 </div>
                 {{/each}}
-        </div>
     </div>
 <div class="modal" id="commentModal">
     <div class="modal-content">
@@ -35,7 +37,7 @@
                 <label for="comment">Comment</label>
                 <textarea class="form-control" id="comment" rows="3" placeholder="Type your comment, max 255 characters."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" id="postBtn">Submit</button>
+            <button type="submit" class="btn btn-primary postBtn" id="addCommentBtn">Submit</button>
         </form>
     </div>
 <script src="/js/blog.js"></script>

@@ -29,6 +29,10 @@ a:hover {
     z-index: 1000;
     border-bottom: 1px solid #3cc761;
 }
+.nav-link {
+    border-bottom: 1px solid #3cc761;
+    width: 75px;
+}
 
 .modal {
     display: none;
@@ -129,14 +133,14 @@ a:hover {
     margin: 0;
 }
 
-#postBtn {
+.postBtn {
     color: #FFF;
     background-color: #3cc761;
     padding: 5px
     transition: all 0.5s;
     position: relative;
   }
-  #postBtn::before {
+.postBtn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -147,11 +151,11 @@ a:hover {
     background-color: rgba(255,255,255,0.1);
     transition: all 0.3s;
   }
-  #postBtn:hover::before {
+.postBtn:hover::before {
     opacity: 0 ;
     transform: scale(0.5,0.5);
   }
-  #postBtn::after {
+.postBtn::after {
     content: '';
     position: absolute;
     top: 0;
@@ -164,17 +168,17 @@ a:hover {
     border: 1px solid rgba(255,255,255,0.5);
     transform: scale(1.2,1.2);
   }
-  #postBtn:hover::after {
+.postBtn:hover::after {
     opacity: 1;
     transform: scale(1,1);
   }
 
-#postBtn {
+.postBtn {
     color: #FFF;
     transition: all 0.5s;
     position: relative;
   }
-  #postBtn::before {
+.postBtn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -182,6 +186,116 @@ a:hover {
     width: 100%;
     height: 100%;
   }
+
+.blogPage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+
+.blog-post {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #3cc761;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2px;
+    position: relative;
+    height: auto;
+    width: 400px;
+}
+
+.blogTitle {
+    color: #3cc761;
+    font-size: 1.5em;
+    margin: 0;
+    border-bottom: 1px solid #3cc761;
+}
+
+.blogContent {
+    color: white;
+    font-size: .8rem;
+    margin-top: 15px;
+}
+
+.addComment {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #3cc761;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    margin: 2px;
+    position: fixed;
+    top: 90%;
+    right: 85%;
+    z-index: 1;
+}
+
+.commentsHeader {
+    color: #3cc761;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.comment-container {;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.comment {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px;
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #3cc761;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+    cursor: pointer;
+    position: relative;
+    height: 50px;
+    width: 400px;
+}
+
+.comment:hover {
+    border: 1px solid yellow;
+    cursor: default;
+}
+
+.commentText {
+    color: white;
+    font-size: .8rem;
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 5%;
+}
+
+.commentAuthor {
+    color: #3cc761;
+    font-size: .5rem;
+    margin: 0;
+    position: absolute;
+    top: 75%;
+    left: 74%;
+}
+.commentUser {
+    color: #3cc761;
+    margin: 0;
+    position: absolute;
+}
+
+#commentBtn {
+    position: relative;
+    left: 17%;
+  }
+
 
 @keyframes active {
     0% {

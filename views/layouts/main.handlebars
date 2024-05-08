@@ -11,13 +11,13 @@
   <header class="p-2">
         <div class="navbar d-flex p-3" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <div class="container-fluid">
+            <div class="container-fluid flex-nowrap">
             <a class="nav-link active col-md-4" aria-current="page" href="/" id="navHome">Home</a>
             {{#if loggedIn}}
             <a class="nav-link link-light col-md-4" href="/profile" id="navProfile">Profile</a>
             <a class="nav-link link-light col-md-4" href="/logout" id="navLogout">Logout</a>
             {{else}}
-            <a class="nav-link link-light col-md-4" href="/login" id="navLogin">Login/Sign Up</a>
+            <a class="nav-link link-light col-md-4" href="/login" id="navLogin">Login</a>
             {{/if}}
           </div>
           </div>
@@ -30,6 +30,5 @@
   </main>
   </body>
   <script src="/js/logout.js"></script>
-  <script src="/js/navbar.js"></script>
 </body>
 </html>

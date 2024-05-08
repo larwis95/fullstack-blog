@@ -14,7 +14,7 @@ const handleLogin = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            const warning = document.createElement('h2');
+            const warning = document.createElement('p');
             warning.textContent = 'Incorrect email or password, please try again';
             warning.style.color = 'red';
             document.querySelector('#loginForm').appendChild(warning);
@@ -42,7 +42,7 @@ const handleSignup = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            const warning = document.createElement('h2');
+            const warning = document.createElement('p');
             warning.textContent = 'Error: Please try again';
             warning.style.color = 'red';
             document.querySelector('#signupForm').appendChild(warning);

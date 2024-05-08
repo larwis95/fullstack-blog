@@ -1,18 +1,15 @@
-const commentBtn = document.getElementById('commentBtn');
+const commentBtn = document.querySelector('#commentBtn');
 const commentModal = document.getElementById('commentModal');
 const closeModal = document.querySelector('.close');
 const modalBg = document.querySelector('.modal');
 const commentForm = document.getElementById('commentForm');
 
-const closeCommentModal = () => {
-    commentModal.style.display = 'none';
-}
-
-const closeCommentModalFromBg = (e) => {
-    if (e.target === modalBg) {
+const closeCommentModal = (e) => {
+    if (e.target === modalBg || e.target === closeModal) {
         commentModal.style.display = 'none';
     }
 }
+
 
 const handleComment = async (e) => {
     e.preventDefault();
@@ -35,11 +32,11 @@ const handleComment = async (e) => {
     }
 }
 
-commentBtn.addEventListener('click', async (e) => {
+commentBtn?.addEventListener('click', async (e) => {
     e.preventDefault();
     commentModal.style.display = 'block';
 });
 
 closeModal.addEventListener('click', closeCommentModal);
-modalBg.addEventListener('click', closeCommentModalFromBg);
+modalBg.addEventListener('click', closeCommentModal);
 commentForm.addEventListener('submit', handleComment);

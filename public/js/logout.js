@@ -7,7 +7,7 @@ const handleLogout = async () => {
     if (response.ok) {
         document.location.replace('/');
     } else {
-        const warning = document.createElement('h2');
+        const warning = document.createElement('p');
         warning.textContent = 'Failed to log out';
         warning.style.color = 'red';
         document.querySelector('#navLogout').appendChild(warning);
